@@ -47,4 +47,4 @@ def argument():
 
 inter_face = argument()
 sniffer(inter_face)
-#Monitor_mode_on(inter_face)
+Monitor_mode_on(inter_face)
