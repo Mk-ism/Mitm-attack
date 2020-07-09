@@ -40,6 +40,15 @@ sleep 2
 clear
 menu
 
+elif [[ $option == 3 || $option == 03 ]]; then
+printf "\n"
+printf "\n"
+printf "\e[1;92m\e[0m\e[1;77m\e[0m\e[1;92m\e[0m\e[1;93m UNBLOCK\e[0m\n"
+read -p 'DOMAIN:' domain
+pihole -w $domain'\.com$'
+sleep 2
+clear
+menu
 elif [[ $option  == 99 ]]; then
 exit 1
 else
