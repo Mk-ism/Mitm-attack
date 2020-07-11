@@ -5,8 +5,8 @@ import sys
 import time
 import argparse
 
-target_ip = "192.168.43.189"
-gateway_ip = "192.168.43.1"
+# target_ip = "192.168.42.73"
+# gateway_ip = "192.168.43.1"
 
 
 def get_mac(ip):
@@ -49,15 +49,15 @@ def start(target_ip, gateway_ip):
         restore(gateway_ip, target_ip)
 
 
-# def argument():
-#     par = argparse.ArgumentParser()
-#     par.add_argument("-t", "--target", dest="target", help="IP address of Target computer")
-#     par.add_argument("-d", "-r", "-s", "--spoof", dest="spoof", help="IP address of Router/Gateway")
-#     options = par.parse_args()
-#     start(options.target, options.spoof)
+def argument():
+    par = argparse.ArgumentParser()
+    par.add_argument("-t", "--target", dest="target", help="IP address of Target computer")
+    par.add_argument("-d", "-r", "-s", "--spoof", dest="spoof", help="IP address of Router/Gateway")
+    options = par.parse_args()
+    start(options.target, options.spoof)
 start(target_ip, gateway_ip)
 
-# try:
-#     argument()
-# except:
-#     print("[-] Recheck the input")
+try:
+    argument()
+except:
+    print("[-] Recheck the input")
