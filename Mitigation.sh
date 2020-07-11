@@ -2,6 +2,15 @@
 #!/bin/sh
 banner() {
 clear
+printf "************************************************************************************************ \n"
+printf "███████╗███████╗██████╗ ██╗   ██╗███████╗██████╗       ███████╗███████╗████████╗██╗   ██╗██████╗ \n"
+printf "██╔════╝██╔════╝██╔══██╗██║   ██║██╔════╝██╔══██╗      ██╔════╝██╔════╝╚══██╔══╝██║   ██║██╔══██╗\n"
+printf "███████╗█████╗  ██████╔╝██║   ██║█████╗  ██████╔╝█████╗███████╗█████╗     ██║   ██║   ██║██████╔╝\n"
+printf "╚════██║██╔══╝  ██╔══██╗╚██╗ ██╔╝██╔══╝  ██╔══██╗╚════╝╚════██║██╔══╝     ██║   ██║   ██║██╔═══╝ \n"
+printf "███████║███████╗██║  ██║ ╚████╔╝ ███████╗██║  ██║      ███████║███████╗   ██║   ╚██████╔╝██║     \n"
+printf "╚══════╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝      ╚══════╝╚══════╝   ╚═╝    ╚═════╝ ╚═╝     \n"
+printf "**************************************************************************************************\n"    
+
 }
 menu() {
 printf "\e[1;92m[\e[0m\e[1;77m01\e[0m\e[1;92m]\e[0m\e[1;93m TO INSTALL PI-HOLE (FOR YOUR OWN DNS)\e[0m\n"
@@ -17,21 +26,25 @@ read -p $'\e[1;92m[*] Choose an option:\e[0m\e[1;77m ' option
 if [[ $option == 1 || $option == 01 ]]; then
 curl -sSL https://install.pi-hole.net | bash
 clear
+banner
 menu
 
 elif [[ $option == 2 || $option == 02 ]]; then
 curl -L https://install.pivpn.io | bash
 clear
+banner
 menu
 
 elif [[ $option == 3 || $option == 03 ]]; then
 bash yourblacklist.sh
 clear
+banner
 menu
 
 elif [[ $option == 4 || $option == 04 ]]; then
 bash Addclient.sh
 clear
+banner
 menu
 
 
