@@ -50,9 +50,11 @@ clients PI VPN is a lightweight OpenVPN server designed to run on Raspberry Pi 2
 
 ## INSTALLATION GUIDE
 > Step 1
-- `curl -sSL https://install.pi-hole.net | bash`
+- `bash Mitigation.sh`
 > Step 2
-- Executing above command  and follow instructions.
+- Executing above command  and choose 01/02 option.
+- 01 for Installation of PI-HOLE (FOR YOUR OWN DNS)
+- 02 for Installation of PI-VPN (FOR YOUR OWN DNS)
 > Step 3
 - whick asks for a static IP address.
 - If a static IP is not set, use the following set of commands to set the static IP as we need this static IP in order to set Pi-Hole as a DNS server later on.
@@ -92,10 +94,7 @@ adjust the hostname at the top of the configuration fileraspi-config to
 
 We are now ready to go over to our freshly installed Pi-hole Dashboard.
 You can access it inside your browser by typing “http://192.168.0.103/admin” or “http://pi.hole/admin”. Change the IP address according to your setup.
-### PI-VPN INSTALLATION GUIDE
-❖ `curl -L https://install.pivpn.io | bash `
-- copy paste above command in terminal < Br />
-❖ After installation, select ok and follow instructions 
+
 
 ## Conclusion 
 Blocking of a Man In the Middle attack needs several practices to be used. It is the acknowledging the prevention tactics and the mitigation application that will help one build up strong enough against these attacks.
