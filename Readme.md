@@ -8,9 +8,10 @@ Man-in-the-middle (MITM) attacks occur when the attacker manages to position the
 One safe approach from this is to use a VPN client as it encrypts Internet traffic via AES. With this encryption, data is encrypted and decrypted again. For an internet criminal it is very difficult to hack the encryption because it consists of a very long number and it takes too much time to try all combinations of numbers. When user is equipped with their own bundle which helps them keep in check of their live logs, blacklisting the suspected domains, wildcard clocks domains – blocking of a site and its sub domains and along with that provides the VPN service encrypts and transmits data while it travels from one place to another on the internet.
 
 ## Installing Dependencies
-`pip install -r requirements.txt`
+- `pip install -r requirements.txt`
+- `bash install.sh`
 * Flip your machine into forwarding mode (as root):
-`sudo sysctl -w net.ipv4.ip_forward=1`
+- `sudo sysctl -w net.ipv4.ip_forward=1`
 
 ## Working
 
@@ -26,15 +27,14 @@ One safe approach from this is to use a VPN client as it encrypts Internet traff
  - Using Mitmproxy
 `iptables -t nat -A PREROUTING -p TCP - -destination-port 443 -j REDIRECT --to-port 8080`
 `sudo mitmproxy -T --host -e`
- - Using Sslstrip
- `iptables -t nat -A PREROUTING -p TCP - -destination-port 443 -j REDIRECT --to-port 8080`
-`sslstrip -l 8080`
+ - Using bettercap
+`sudo bettercap -X`
 - or by script 
 `sudo python https.py`
 
 ### Tech
 * MItmproxy - Mitmproxy is a swiss-army knife for debugging, testing, privacy measurements, and penetration testing. It can be used to intercept, inspect, modify and replay web traffic such as HTTP/1, HTTP/2, WebSockets, or any other SSL/TLS- protected protocols. One can prettify and decode a variety of message types ranging from HTML to Protobuf, intercept specific messages on-the-fly, modify them before they reach their destination, and replay them to a client or server later on. For more info refer this- https://docs.mitmproxy.org/stable/concepts-howmitmproxyworks/
-* sslstrip - Sslstrip is a tool that transparently hijacks HTTP traffic on a network, watches for HTTPS links and redirects, and then map those links into look-alike HTTP links or homograph-similar HTTPS links. It also supports modes for supplying a favicon which looks like a lock icon, selective logging, and session denial. For more info refer this- https://pypi.org/project/sslstrip/
+* Bettercap - Bettercap is a powerful, easily extensible and portable framework written in Go which aims to offer to security researchers, red teamers and reverse engineers an easy to use, all-in-one solution with all the features they might possibly need for performing reconnaissance and attacking WiFi networks, Bluetooth Low Energy devices, wireless HID devices and Ethernet networks. For more info refer this- https://github.com/bettercap/bettercap
 
 
 ## COUNTER MEASURES
@@ -176,6 +176,7 @@ https://averagelinuxuser.com/linux-vpn-server/
 - https://www.comparitech.com/blog/vpn-privacy/raspberry-pi-vpn/
 - sslstrip - https://pypi.org/project/sslstrip/
 - mitmproxy - https://docs.mitmproxy.org/stable/concepts-howmitmproxyworks/
+- bettercap - https://github.com/bettercap/bettercap
 
 
 
