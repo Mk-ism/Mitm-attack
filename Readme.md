@@ -130,41 +130,35 @@ MIT
 - [Kinchit Saxena](https://github.com)
 - [Mayank Chahal](https://github.com)
 ### References
-i. “Network-wide ad blocking via your own Linux hardware” [Online]-
+- i. “Network-wide ad blocking via your own Linux hardware” [Online]-
 https://github.com/pi-hole/pi-hole
 [Accessed on- 20/06/2020]
-ii. “VPN can prevent a MITM attack” [Online]-
-https://www.professionalsecurity.co.uk/news/press-releases/vpn-can-
-prevent-a-man-in-the-middle-attack/
+- ii. “VPN can prevent a MITM attack” [Online]-
+https://www.professionalsecurity.co.uk/news/press-releases/vpn-can-prevent-a-man-in-the-middle-attack/
 [Accessed on- 20/06/2020]
-iii. “Setting up an OpenVPN server with DD-WRT and Viscosity” [Online]-
-https://www.sparklabs.com/support/kb/article/setting-up-an-openvpn-
-server-with-dd-wrt-and-viscosity/
+- iii. “Setting up an OpenVPN server with DD-WRT and Viscosity” [Online]-
+https://www.sparklabs.com/support/kb/article/setting-up-an-openvpn-server-with-dd-wrt-and-viscosity/
 [Accessed on- 22/06/2020]
-iv. “How to access a fake access point” [Online]-
+- iv. “How to access a fake access point” [Online]-
 https://zsecurity.org/how-to-start-a-fake-access-point-fake-wifi/
 [Accessed on-28/06/2020]
-v. “Installing OpenVpn on Raspbian”[Online]-
+- v. “Installing OpenVpn on Raspbian”[Online]-
 https://www.ovpn.com/en/guides/raspberry-pi-raspbian
 [Accessed on- 29/06/2020]
-vi. “How to setup openvpn on Debian” [Online] -
+- vi. “How to setup openvpn on Debian” [Online] -
 https://wiki.debian.org/OpenVPN
 https://averagelinuxuser.com/linux-vpn-server/
 [Accessed on- 01/07/2020]
-vii. Documentation [Online]-
+- vii. Documentation [Online]-
 http://site.iugaza.edu.ps/nour/files/lab4-MITM1.pdf
 https://www.thesslstore.com/blog/man-in-the-middle-attack-2/
 https://www.thesslstore.com/blog/man-in-the-middle-attack/
-https://www.adtran.com/images/tech_team/presentations/030618/
-Protect.pdf
-https://files.ifi.uzh.ch/CSG/staff/franco/extern/theses/BA-Lawand-
-Muhamad.pdf
-sslstrip-https://pypi.org/project/sslstrip/
- mitmproxy- https://docs.mitmproxy.org/stable/concepts-howmitmproxyworks/
-https://openvpn.net/images/pdf/
-OpenVPN_Access_Server_Sysadmin_Guide_Rev.pdf
+https://www.adtran.com/images/tech_team/presentations/030618/Protect.pdf
+https://files.ifi.uzh.ch/CSG/staff/franco/extern/theses/BA-Lawand-Muhamad.pdf
+https://openvpn.net/images/pdf/OpenVPN_Access_Server_Sysadmin_Guide_Rev.pdf
 https://www.comparitech.com/blog/vpn-privacy/raspberry-pi-vpn/
-
+- sslstrip-https://pypi.org/project/sslstrip/
+- mitmproxy- https://docs.mitmproxy.org/stable/concepts-howmitmproxyworks/
 
 
 
