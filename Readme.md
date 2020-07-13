@@ -50,7 +50,7 @@ clients PI VPN is a lightweight OpenVPN server designed to run on Raspberry Pi 2
 
 ## INSTALLATION GUIDE
 > Step 1
-`curl -sSL https://install.pi-hole.net | bash`
+- `curl -sSL https://install.pi-hole.net | bash`
 > Step 2
 - Executing above command  and follow instructions.
 > Step 3
@@ -61,11 +61,11 @@ clients PI VPN is a lightweight OpenVPN server designed to run on Raspberry Pi 2
 `sudo nano /etc/dhcpcd.conf`
 - Scroll to the end of the file and change the following lines according to your network setup for a static IP.
 - Example static IP configuration:
-`interface eth0
-static ip_address=192.168.2.2/24
-static ip6_address=fd51:42f8:caae:d92e::ff/64
-static routers=192.168.2.1
-static domain_name_servers=192.168.2.1`
+- `interface eth0`
+- `static ip_address=192.168.2.2/24`
+- `static ip6_address=fd51:42f8:caae:d92e::ff/64`
+- `static routers=192.168.2.1`
+- `static domain_name_servers=192.168.2.1`
 adjust the hostname at the top of the configuration fileraspi-config to
 - “pihole” manually as follows: Inform the DHCP server of our hostname for DDNS.
 > Step 4 
