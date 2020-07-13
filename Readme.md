@@ -52,9 +52,8 @@ clients PI VPN is a lightweight OpenVPN server designed to run on Raspberry Pi 2
 > Step 1
 - `bash Mitigation.sh`
 > Step 2
-- Executing above command  and choose 01/02 option.
-- 01 for Installation of PI-HOLE (FOR YOUR OWN DNS)
-- 02 for Installation of PI-VPN (FOR YOUR OWN DNS)
+- Executing above command  and choose 01 option.
+- 01 for Installation of PI-HOLE (for your own DNS)
 > Step 3
 - whick asks for a static IP address.
 - If a static IP is not set, use the following set of commands to set the static IP as we need this static IP in order to set Pi-Hole as a DNS server later on.
@@ -94,6 +93,32 @@ adjust the hostname at the top of the configuration fileraspi-config to
 
 We are now ready to go over to our freshly installed Pi-hole Dashboard.
 You can access it inside your browser by typing “http://192.168.0.103/admin” or “http://pi.hole/admin”. Change the IP address according to your setup.
+
+## INSTALLATION GUIDE for PI-VPN
+> Step 1
+- `bash Mitigation.sh`
+> Step 2
+- Executing above command  and choose 01 option.
+- 02 for Installation of PI-VPN (for your own VPN)
+> Step 3
+- Then select yes to use your current address as your static address
+> Step 4 
+- confirm your Ip address and Gateway
+> Step 5 
+- follow installation to confirm Pi and UDP
+> Step 6 
+- enter your port and ip
+> Step 7 
+- Then select the encryption level you want(use 256-bit)
+> Step 8
+- Then select Use public DNS
+> Step 9 
+- Then enter the name of the public dns server and select yes.
+> Step 10 
+- Then select the DNS provider as Google
+> Step 11 
+- and lastly reboot your system.
+
 
 
 ## Conclusion 
