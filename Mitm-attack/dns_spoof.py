@@ -1,6 +1,7 @@
 #!usr/bin/env/python
 import subprocess
-import netfilterqueue
+# import netfilterqueue
+import NFQP3 as netfilterqueue
 import scapy.all as scapy
 import argparse
 import socket

