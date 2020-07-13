@@ -32,6 +32,8 @@ One safe approach from this is to use a VPN client as it encrypts Internet traff
 - or by script 
 `sudo python https.py`
 
+![https.jpeg](https://github.com/Mk-ism/Mitm-attack/tree/development/ss/https.jpeg)
+
 ### Tech
 * MItmproxy - Mitmproxy is a swiss-army knife for debugging, testing, privacy measurements, and penetration testing. It can be used to intercept, inspect, modify and replay web traffic such as HTTP/1, HTTP/2, WebSockets, or any other SSL/TLS- protected protocols. One can prettify and decode a variety of message types ranging from HTML to Protobuf, intercept specific messages on-the-fly, modify them before they reach their destination, and replay them to a client or server later on. For more info refer this- https://docs.mitmproxy.org/stable/concepts-howmitmproxyworks/
 * Bettercap - Bettercap is a powerful, easily extensible and portable framework written in Go which aims to offer to security researchers, red teamers and reverse engineers an easy to use, all-in-one solution with all the features they might possibly need for performing reconnaissance and attacking WiFi networks, Bluetooth Low Energy devices, wireless HID devices and Ethernet networks. For more info refer this- https://github.com/bettercap/bettercap
