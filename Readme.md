@@ -1,6 +1,6 @@
 # MITM Attack
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger) [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 Man-in-the-middle (MITM) attacks occur when the attacker manages to position themselves between the legitimate parties to a conversation. The attacker spoofs the opposite legitimate party so that all parties believe they are actually talking to the expected other, legitimate parties. In layman’s terms, MITM attack can be described as eavesdropping.
 
@@ -49,11 +49,11 @@ PI-Hole - The Pi-hole is a DNS sinkhole that protects devices from unwanted cont
 clients PI VPN is a lightweight OpenVPN server designed to run on Raspberry Pi 2 or 3. It gives you access to our home network through a secure connection over the internet. By plugging a Raspberry Pi into your router, it acts somewhat like a bridge between mobile devices and your network.
 
 ## INSTALLATION GUIDE
-* [Step 1]
+> [Step 1]
 `curl -sSL https://install.pi-hole.net | bash`
-* [Step 2]
+> [Step 2]
 Executing above command  and follow instructions.
-* [Step 3]
+> [Step 3]
 whick asks for a static IP address.
 If a static IP is not set, use the following set of commands to set the static
 IP as we need this static IP in order to set Pi-Hole as a DNS server later on.
@@ -73,30 +73,30 @@ adjust the hostname at the top of the configuration fileraspi-config to
 “pihole” manually as follows:
 Inform the DHCP server of our hostname for DDNS.
 pihole
-* [Step 4]
+> [Step 4] 
 Here it is asking you which DNS server Pi-hole should use to resolve
 IPs/domains. Google is aadequeate choice.
-* [Step 5]
+> [Step 5]
 Pi-hole relies on lists with unwanted ad domains, we have to use some
 repositories from third parties that maintain these lists. By default, all
 repositories are activated or add any list manually after installation.
-* [Step 6]
+> [Step 6]
 For blocking unwanted ads regardless of the IP protocol version, we shall leave it to both protocols activated by default and continue the installation
-* [Step 7] 
+> [Step 7] 
 The Gateway is usually the IP of your router.The IP address should be the static one you configured before for the Raspberry Pi.
 Simply read the caution message and continue installation.
-* [Step 8]
+> [Step 8]
 Now install the web admin interface asit allows usage of interactive
 Dashboard later on.
-* [Step 9] 
+> [Step 9] 
 Install the web server as it allows admin page to be hosted locally on the machine for the purpose of using the Dashboard.
-* [Step 10]
+> [Step 10]
 Logging queries shall be set to “On” as it allows us to inspect the logsif something goes wrong.
-* [Step 11]
+> [Step 11]
 Use the default option because we want to see everything that Pi-Hole blocks inside the Dashboard.
-* [Step 12]
+> [Step 12]
 The screen indicates that the installation has started with preferences that are set above.
-* [Step 13]
+> [Step 13]
 This screen also contains the password that we need later on to log into the Dashboard.
 
 We are now ready to go over to our freshly installed Pi-hole Dashboard.
@@ -118,6 +118,7 @@ From a developer side :- The web operators should include TLS and HTTPS protocol
 
 License
 ----
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 MIT
 
