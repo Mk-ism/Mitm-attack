@@ -93,7 +93,8 @@ adjust the hostname at the top of the configuration fileraspi-config to
 We are now ready to go over to our freshly installed Pi-hole Dashboard.
 You can access it inside your browser by typing “http://192.168.0.103/admin” or “http://pi.hole/admin”. Change the IP address according to your setup.
 ### PI-VPN INSTALLATION GUIDE
-❖ `curl -L https://install.pivpn.io | bash `, type this in terminal
+❖ `curl -L https://install.pivpn.io | bash `
+- copy paste above command in terminal
 ❖ After installation, select ok and follow instructions 
 
 ## Conclusion 
