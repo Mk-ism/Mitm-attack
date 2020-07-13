@@ -15,19 +15,18 @@ One safe approach from this is to use a VPN client as it encrypts Internet traff
 
 ## Working
 
-1. Changing MAC Address:
+1. CHANGING MAC ADDRESS
 `sudo python mac.py -i eth0 -m 12:22:33:44:55:66`
-2. Scanning IPs in Network:
+2. Scanning IPs in Network
 `sudo python scanner2.py -t 192.168.43.1/24`
-3. Capturing traffic:
+3. Capturing traffic
 `sudo python arp.py -t 192.168.43.73 -d 192.168.43.1`
-4. Sniffing HTTP Traffic:
+4. Sniffing HTTP Traffic
 `sudo python psniffer.py -i eth0`
-5. Capturing HTTPs Taffic:
-   - Using Mitmproxy
+5. Capturing HTTPs Taffic
+ - Using Mitmproxy
 `iptables -t nat -A PREROUTING -p TCP - -destination-port 443 -j REDIRECT --to-port 8080`
 `sudo mitmproxy -T --host -e`
-<<<<<<< HEAD
  - Using bettercap
 `sudo bettercap -X`
 - or by script 
@@ -36,43 +35,29 @@ One safe approach from this is to use a VPN client as it encrypts Internet traff
 ### Tech
 * MItmproxy - Mitmproxy is a swiss-army knife for debugging, testing, privacy measurements, and penetration testing. It can be used to intercept, inspect, modify and replay web traffic such as HTTP/1, HTTP/2, WebSockets, or any other SSL/TLS- protected protocols. One can prettify and decode a variety of message types ranging from HTML to Protobuf, intercept specific messages on-the-fly, modify them before they reach their destination, and replay them to a client or server later on. For more info refer this- https://docs.mitmproxy.org/stable/concepts-howmitmproxyworks/
 * Bettercap - Bettercap is a powerful, easily extensible and portable framework written in Go which aims to offer to security researchers, red teamers and reverse engineers an easy to use, all-in-one solution with all the features they might possibly need for performing reconnaissance and attacking WiFi networks, Bluetooth Low Energy devices, wireless HID devices and Ethernet networks. For more info refer this- https://github.com/bettercap/bettercap
-=======
-   - Using Sslstrip
- `iptables -t nat -A PREROUTING -p TCP - -destination-port 443 -j REDIRECT --to-port 8080`
-`sslstrip -l 8080`
-   - or by script 
-`sudo python https.py`
-
-### Tech
-* **Mitmproxy** - Mitmproxy is a swiss-army knife for debugging, testing, privacy measurements, and penetration testing. It can be used to intercept, inspect, modify and replay web traffic such as HTTP/1, HTTP/2, WebSockets, or any other SSL/TLS- protected protocols. One can prettify and decode a variety of message types ranging from HTML to Protobuf, intercept specific messages on-the-fly, modify them before they reach their destination, and replay them to a client or server later on.  
-For more info refer this- https://docs.mitmproxy.org/stable/concepts-howmitmproxyworks/
-* **sslstrip** - Sslstrip is a tool that transparently hijacks HTTP traffic on a network, watches for HTTPS links and redirects, and then map those links into look-alike HTTP links or homograph-similar HTTPS links. It also supports modes for supplying a favicon which looks like a lock icon, selective logging, and session denial.  
-For more info refer this- https://pypi.org/project/sslstrip/
->>>>>>> 8df245d0b005c964fa4f88c93c2d08f4b1383795
 
 
 ## COUNTER MEASURES
 These attacks are highly complicated in nature. One needs to have some serious skills and must be aided by right tools in order to prevent such attacks.
 
 ### Our Solution
-**PI-Hole** - The Pi-hole is a DNS sinkhole that protects devices from unwanted content, without installing any client- side software. Pi-Hole is a network wide ad-blocking tool, which sets up a Domain Name System (DNS) server and handles all DNS requests generated from our home network. Pi-Hole will deny all requests from ad- servers and thereby prevent the loading of advertisements.  Pi-Hole does not modify the website or application’s request to download any third-party scripts. The advantage over other ad-blocking alternatives is, that Pi-Hole blocks ads on network level, which also allows for ad-blocking on non traditional devices such as Smartphones or TVs. Pi-Hole works using filter lists. These lists are publicly available and crowd-sourced. Users are able to add additional filter list or block single ad- domains. They prevent advertisement from actually being loaded by denying the request made from these ad-servers. VPN Blockers do also work with filter lists. Unlike Pi- Hole, it is not possible for the end-user to add additional filter lists, since the configuration is made by the VPN operator.  
-**VPN** - The OpenVPN Access Server consists of a set of installation and configuration tools which allow for simple and rapid deployment of VPN remote access solutions using the OpenVPN open source project. The Access Server software builds upon the usability and popularity of OpenVPN, while easing VPN configuration and deployment by providing the following features:
- - Simplified server configuration
- - Support for external user authentication database
- - Easy intuitive Web-Based client access
- - Compatibility with a large base of OpenVPN
+PI-Hole - The Pi-hole is a DNS sinkhole that protects devices from unwanted content, without installing any client- side software. Pi-Hole is a network wide ad-blocking tool, which sets up a Domain Name System (DNS) server and handles all DNS requests generated from our home network. Pi-Hole will deny all requests from ad- servers and thereby prevent the loading of advertisements.  Pi-Hole does not modify the website or application’s request to download any third-party scripts. The advantage over other ad-blocking alternatives is, that Pi-Hole blocks ads on network level, which also allows for ad-blocking on non traditional devices such as Smartphones or TVs. Pi-Hole works using filter lists. These lists are publicly available and crowd-sourced. Users are able to add additional filter list or block single ad- domains. They prevent advertisement from actually being loaded by denying the request made from these ad-servers. VPN Blockers do also work with filter lists. Unlike Pi- Hole, it is not possible for the end-user to add additional filter lists, since the configuration is made by the VPN operator. VPN - The OpenVPN Access Server consists of a set of installation and configuration tools which allow for simple and rapid deployment of VPN remote access solutions using the OpenVPN open source project. The Access Server software builds upon the usability and popularity of OpenVPN, while easing VPN configuration and deployment by providing the following features:
+- Simplified server configuration
+- Support for external user authentication database
+- Easy intuitive Web-Based client access
+- Compatibility with a large base of OpenVPN
 clients PI VPN is a lightweight OpenVPN server designed to run on Raspberry Pi 2 or 3. It gives you access to our home network through a secure connection over the internet. By plugging a Raspberry Pi into your router, it acts somewhat like a bridge between mobile devices and your network.
 
 ## INSTALLATION GUIDE
 > Step 1
 - `bash Mitigation.sh`
 > Step 2
-- Execute the above command  and choose 01 option.
-- 01 is for Installation of PI-HOLE (for your own DNS)
+- Executing above command  and choose 01 option.
+- 01 for Installation of PI-HOLE (for your own DNS)
 > Step 3
-- This asks for a static IP address.
+- whick asks for a static IP address.
 - If a static IP is not set, use the following set of commands to set the static IP as we need this static IP in order to set Pi-Hole as a DNS server later on.
-- A dynamic IP will be cumbersome as we will have to change our DNS server IP every time Pi-Hole gets a new IP by the router’s DHCP server.
+- A dynamic IP would be cumbersome because then we would have to change our DNS server IP every time Pi-Hole gets a new IP by the router’s DHCP server.
 - We use nano to edit the DHCP client configuration file:
 `sudo nano /etc/dhcpcd.conf`
 - Scroll to the end of the file and change the following lines according to your network setup for a static IP.
@@ -113,26 +98,26 @@ You can access it inside your browser by typing “http://192.168.0.103/admin”
 > Step 1
 - `bash Mitigation.sh`
 > Step 2
-- Execute the above command  and choose 02 option.
-- 02 is for Installation of PI-VPN (for your own VPN)
+- Executing above command  and choose 02 option.
+- 02 for Installation of PI-VPN (for your own VPN)
 > Step 3
-- Select yes to use your current address as your static address
+- Then select yes to use your current address as your static address
 > Step 4 
-- Confirm your IP address and Gateway
+- confirm your Ip address and Gateway
 > Step 5 
-- Follow installation to confirm Pi and UDP
+- follow installation to confirm Pi and UDP
 > Step 6 
-- Enter your port and IP
+- enter your port and ip
 > Step 7 
-- Select the encryption level you want(use 256-bit)
+- Then select the encryption level you want(use 256-bit)
 > Step 8
-- Select Use public DNS
+- Then select Use public DNS
 > Step 9 
-- Enter the name of the public dns server and select yes.
+- Then enter the name of the public dns server and select yes.
 > Step 10 
-- Select the DNS provider as Pihole or it will autodetect the pihole settings on your pi 
+- Then select the DNS provider as Pihole or it will autodetect the pihole settings on your pi 
 > Step 11 
-- Lastly reboot your system.
+- and lastly reboot your system.
 
 
 
@@ -154,7 +139,7 @@ License
 MIT
 
 ### Contributor
-- [Mayank Kumar](https://github.com/Mk-ism)
+- [Mayank kumar](https://github.com/Mk-ism)
 - [Meenakshi Kharel](https://github.com/MEraKi4)
 - [Aman Kumar](https://github.com/Average-stu)
 - [Arathi S](https://github.com/Arathi-S124)
@@ -162,26 +147,25 @@ MIT
 - [Kinchit Saxena](https://github.com)
 - [Mayank Chahal](https://github.com)
 ### References
-1. “Network-wide ad blocking via your own Linux hardware” [Online]-  
-   - https://github.com/pi-hole/pi-hole  
-   [Accessed on- 20/06/2020] 
-2. “VPN can prevent a MITM attack” [Online]-  
-   - https://www.professionalsecurity.co.uk/news/press-releases/vpn-can-prevent-a-man-in-the-middle-attack/  
+- i. “Network-wide ad blocking via your own Linux hardware” [Online]-
+https://github.com/pi-hole/pi-hole
 [Accessed on- 20/06/2020]
-3. “Setting up an OpenVPN server with DD-WRT and Viscosity” [Online]-  
-   - https://www.sparklabs.com/support/kb/article/setting-up-an-openvpn-server-with-dd-wrt-and-viscosity/  
+- ii. “VPN can prevent a MITM attack” [Online]-
+https://www.professionalsecurity.co.uk/news/press-releases/vpn-can-prevent-a-man-in-the-middle-attack/
+[Accessed on- 20/06/2020]
+- iii. “Setting up an OpenVPN server with DD-WRT and Viscosity” [Online]-
+https://www.sparklabs.com/support/kb/article/setting-up-an-openvpn-server-with-dd-wrt-and-viscosity/
 [Accessed on- 22/06/2020]
-4. “How to access a fake access point” [Online]-  
-   - https://zsecurity.org/how-to-start-a-fake-access-point-fake-wifi/  
+- iv. “How to access a fake access point” [Online]-
+https://zsecurity.org/how-to-start-a-fake-access-point-fake-wifi/
 [Accessed on-28/06/2020]
-5. “Installing OpenVpn on Raspbian”[Online]-  
-   - https://www.ovpn.com/en/guides/raspberry-pi-raspbian  
+- v. “Installing OpenVpn on Raspbian”[Online]-
+https://www.ovpn.com/en/guides/raspberry-pi-raspbian
 [Accessed on- 29/06/2020]
-6. “How to setup openvpn on Debian” [Online] -  
-   - https://wiki.debian.org/OpenVPN  
-   - https://averagelinuxuser.com/linux-vpn-server/  
+- vi. “How to setup openvpn on Debian” [Online] -
+https://wiki.debian.org/OpenVPN
+https://averagelinuxuser.com/linux-vpn-server/
 [Accessed on- 01/07/2020]
-<<<<<<< HEAD
 - vii. Documentation [Online]-
 - http://site.iugaza.edu.ps/nour/files/lab4-MITM1.pdf
 - https://www.thesslstore.com/blog/man-in-the-middle-attack-2/
@@ -193,19 +177,6 @@ MIT
 - sslstrip - https://pypi.org/project/sslstrip/
 - mitmproxy - https://docs.mitmproxy.org/stable/concepts-howmitmproxyworks/
 - bettercap - https://github.com/bettercap/bettercap
-=======
-7. Documentation [Online]-  
-   - http://site.iugaza.edu.ps/nour/files/lab4-MITM1.pdf
-   - https://www.thesslstore.com/blog/man-in-the-middle-attack-2/
-   - https://www.thesslstore.com/blog/man-in-the-middle-attack/
-   - https://www.adtran.com/images/tech_team/presentations/030618/Protect.pdf
-   - https://files.ifi.uzh.ch/CSG/staff/franco/extern/theses/BA-Lawand-Muhamad.pdf
-   - https://openvpn.net/images/pdf/OpenVPN_Access_Server_Sysadmin_Guide_Rev.pdf
-   - https://www.comparitech.com/blog/vpn-privacy/raspberry-pi-vpn/
-8. Tools Used [Online]-
-   - sslstrip - https://pypi.org/project/sslstrip/
-   - mitmproxy - https://docs.mitmproxy.org/stable/concepts-howmitmproxyworks/
->>>>>>> 8df245d0b005c964fa4f88c93c2d08f4b1383795
 
 
 
