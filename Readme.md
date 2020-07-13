@@ -98,7 +98,7 @@ You can access it inside your browser by typing “http://192.168.0.103/admin”
 > Step 1
 - `bash Mitigation.sh`
 > Step 2
-- Executing above command  and choose 01 option.
+- Executing above command  and choose 02 option.
 - 02 for Installation of PI-VPN (for your own VPN)
 > Step 3
 - Then select yes to use your current address as your static address
