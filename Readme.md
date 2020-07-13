@@ -115,7 +115,7 @@ You can access it inside your browser by typing “http://192.168.0.103/admin”
 > Step 9 
 - Then enter the name of the public dns server and select yes.
 > Step 10 
-- Then select the DNS provider as Google
+- Then select the DNS provider as Pihole or it will autodetect the pihole settings on your pi 
 > Step 11 
 - and lastly reboot your system.
 
